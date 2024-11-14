@@ -1,0 +1,34 @@
+﻿@using MarabitoLab6.Models
+@model List<Product>
+@{
+    Layout = "_Layout";
+    ViewBag.Title= "Product List";
+}
+
+
+    <h1>Product count : @ViewBag.ProductCount</h1>
+<table>
+        <thead>
+            <tr><th>Name</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+            @foreach (Product p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td><td>@p.Price</td> 
+                    @if (p.InStock == true)
+                    {
+                        <td style="color:green">In Stock</td>
+                    }
+                    else
+                    {
+                        <td style="color:red">Out of Stock</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+ @section Footer {
+    123 Even faker company address </br> 
+    FakeContact@email-address.com
+}

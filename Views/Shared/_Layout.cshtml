@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <div>
+        @if (IsSectionDefined("Footer"))
+        {
+            @RenderSection("Footer",false)
+        }
+        else{
+            @:123 fake company address </ br >
+            @:contact@email - address.com
+        }
+    </div>
+</body>
+</html>
